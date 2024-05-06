@@ -1,0 +1,35 @@
+# config.yml
+
+OD_DIR: opendata # directory with raw open data
+OD_FILE_TYPE: csv 
+DATA_DIR: data # directory with data (previously parsed by opendata)
+TED_CFC_FILE: TED_CFC_2020-2022.csv # CFC file merged 
+TED_CFC_SCHEMA_FILE: TED_CFC_schema.csv
+TED_CAN_FILE: TED_CAN_2020-2022.csv # CAN file merged 
+TED_CAN_SCHEMA_FILE: TED_CAN_schema.csv
+TED_JOIN_FILE: TED_CFC_CAN_2020-2022.csv # CFC file merged 
+COUNTRY_CODES_FEATURE: ISO_COUNTRY_CODE # Country codes feature name (filter)
+COUNTRY_CODES_VALUES: # List of country codes (filter)
+  - ES
+  - IT
+  - FR
+CA_CODES_FEATURE: CAE_TYPE # # Contract Authority Code feature name (filter)
+CA_CODES_VALUES: # List of Contract Authority codes (filter)
+  - '3'
+LOG_DIR: data_log
+LOG_FILE: TED_log_2020-2022.csv
+TED_LOG_EVENTS: # Features containing events
+  - ID_NOTICE_CN
+  - DT_DISPATCH
+  - CONTRACT_START
+  - CONTRACT_COMPLETION
+  - DT_APPLICATIONS
+  - DT_AWARD
+TED_LOG_ATTRIBUTES: # Features containing trace attributes
+  - TYPE_OF_CONTRACT
+  - VALUE_EURO
+  - B_ELECTRONIC_AUCTION
+  - B_FRA_AGREEMENT
+  - TAL_LOCATION_NUTS
+  - CPV
+  - ISO_COUNTRY_CODE
