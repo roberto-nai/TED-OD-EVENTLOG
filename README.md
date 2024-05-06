@@ -5,7 +5,7 @@ This project takes the Open Data (OD) from the Tenders Electronic Daily (TED) po
 TED web page with OD (in English): [https://data.europa.eu/data/datasets/ted-csv?locale=en](https://data.europa.eu/data/datasets/ted-csv?locale=en)  
 There are two types of dataset available:  
 - CFC: Call For Competition (step 1/2); key feature ID_NOTICE_CN.  
-- CAN: Contract Award Notices (step 2/2) key feature ID_NOTICE_CAN.    
+- CAN: Contract Award Notices (step 2/2); key feature ID_NOTICE_CAN.    
 - The two datasets are linked by CFC.FUTURE_CAN_ID = CAN.ID_NOTICE_CAN. Note: the CAN of a CFC may be missing, due to the tender (CFC.ID_NOTICE_CN) not having been awarded.
 
 ## TED Open Data - Download
