@@ -36,8 +36,9 @@ Contains the event log created starting from the files in ```data```.
 Contains raw OD downloaded from the TED web site. 
 
 ## > Share
-If you use it, please cite:  
-```@InProceedings{10.1007/978-3-031-47112-4_17,
+If you use it, please cite:    
+```
+@InProceedings{10.1007/978-3-031-47112-4_17,
 author="Nai, Roberto
 and Sulis, Emilio
 and Genga, Laura",
@@ -52,4 +53,5 @@ publisher="Springer Nature Switzerland",
 address="Cham",
 pages="178--188",
 isbn="978-3-031-47112-4"
-}```  
+}
+```
