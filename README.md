@@ -12,7 +12,7 @@ There are two types of dataset available:
 Sample URL for CFC: [https://data.europa.eu/api/hub/store/data/ted-contract-notices-2020.zip](https://data.europa.eu/api/hub/store/data/ted-contract-notices-2020.zip)  
 Sample URL for CAN: [https://data.europa.eu/api/hub/store/data/ted-contract-award-notices-2020.zip](https://data.europa.eu/api/hub/store/data/ted-contract-award-notices-2020.zip)  
 Change the year in the URL to download the related file and save it in ```opendata``` directory inserting 'CFC' or 'CAN' suffix in the file name.  
-The 2016 - 2022 files are also available in a public Drive here: [https://bit.ly/3UP53pC](https://bit.ly/3UP53pC)  
+The 2016 - 2022 files are also available in a public Drive here: [https://bit.ly/3UP53pC](https://bit.ly/3UP53pC). Download CSVs in the ```opendata```  directory.  
 
 ## TED Open Data - Documentation
 TED CSV open data NOTES & CODEBOOK (PDF): [https://data.europa.eu/api/hub/store/data/ted-csv-data-information-v3-6.pdf](https://data.europa.eu/api/hub/store/data/ted-csv-data-information-v3-6.pdf)  
