@@ -26,6 +26,8 @@ Join 'CFC' and 'CAN' files and transforms data into an event log. Save the event
 NOTE: see ```requirements.txt``` for the required libraries (```pip install -r requirements.txt```).  
 
 ## > Directories
+```config```  
+Directory with the configuration file in YAML format (```config.yml```) and script to read it (```config_reader.py```).   
 ```data```  
 Contains filtered data and schema from raw OD. Files are saved by entering 'CFC' or 'CAN' to distinguish their type.  
 ```data_log```  
