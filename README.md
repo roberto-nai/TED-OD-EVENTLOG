@@ -23,7 +23,9 @@ TED CSV open data Advanced notes on methodology (PDF): [http://data.europa.eu/eu
 Reads the 'CFC' and 'CAN' raw OD in ```opendata``` directory, filters them by the countries and contract authority code (defined in the ```config.yml```) and merges them into a single CSV file in the directory defined in ```DATA_DIR```.    
 ```02_log_creation.ipynb```  
 Join 'CFC' and 'CAN' files and transforms data into an event log. Save the event log generated in ```data_log```.  
-NOTE: see ```requirements.txt``` for the required libraries (```pip install -r requirements.txt```).  
+
+## > Script Dependencies
+See ```requirements.txt``` for the required libraries (```pip install -r requirements.txt```).  
 
 ## > Directories
 ```config```  
@@ -35,7 +37,7 @@ Contains the event log created starting from the files in ```data```.
 ```opendata```    
 Contains raw OD downloaded from the TED web site. 
 
-## > Share
+## Share
 If you use it, please cite:    
 ```
 @InProceedings{10.1007/978-3-031-47112-4_17,
