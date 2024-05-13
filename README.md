@@ -21,7 +21,7 @@ TED CSV open data Advanced notes on methodology (PDF): [http://data.europa.eu/eu
 
 ## > Script Execution
 ```01_read_opendata.ipynb```  
-Reads the 'CFC' and 'CAN' raw OD in ```opendata``` directory, filters them by the countries and contract authority code (defined in the ```config.yml```) and merges them into a single CSV file in the directory defined in ```DATA_DIR```.    
+Reads the 'CFC' and 'CAN' raw OD in ```opendata``` directory, filters them by the countries and contract authority code (defined in the ```config.yml```) and merges them into a single CSV file in the directory defined in ```DATA_DIR```. Create the file defined in ```TED_URLS_FILE``` with a list of URLs from which to download the texts of each CFC.      
 ```02_log_creation.ipynb```  
 Join 'CFC' and 'CAN' files and transforms data into an event log. Save the event log generated in ```data_log```.  
 

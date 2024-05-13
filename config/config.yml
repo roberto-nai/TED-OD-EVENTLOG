@@ -7,6 +7,7 @@ TED_CFC_FILE: TED_CFC_2020-2022.csv # CFC file merged
 TED_CFC_SCHEMA_FILE: TED_CFC_schema.csv
 TED_CAN_FILE: TED_CAN_2020-2022.csv # CAN file merged 
 TED_CAN_SCHEMA_FILE: TED_CAN_schema.csv
+TED_URLS_FILE: TED_URLs.csv
 TED_JOIN_FILE: TED_CFC_CAN_2020-2022.csv # CFC file merged 
 COUNTRY_CODES_FEATURE: ISO_COUNTRY_CODE # Country codes feature name (filter)
 COUNTRY_CODES_VALUES: # List of country codes (filter)
