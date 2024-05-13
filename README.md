@@ -13,6 +13,7 @@ Sample URL for CFC: [https://data.europa.eu/api/hub/store/data/ted-contract-noti
 Sample URL for CAN: [https://data.europa.eu/api/hub/store/data/ted-contract-award-notices-2020.zip](https://data.europa.eu/api/hub/store/data/ted-contract-award-notices-2020.zip)  
 Change the year in the URL to download the related file and save it in ```opendata``` directory inserting 'CFC' or 'CAN' suffix in the file name.  
 The 2016 - 2022 files are also available in a public Drive here: [https://bit.ly/3UP53pC](https://bit.ly/3UP53pC). Download CSVs in the ```opendata```  directory.  
+At least one CFC and one CAN file must be used to generate the event log correctly.  
 
 ## TED Open Data - Documentation
 TED CSV open data NOTES & CODEBOOK (PDF): [https://data.europa.eu/api/hub/store/data/ted-csv-data-information-v3-6.pdf](https://data.europa.eu/api/hub/store/data/ted-csv-data-information-v3-6.pdf)  
