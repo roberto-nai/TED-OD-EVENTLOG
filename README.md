@@ -23,7 +23,7 @@ TED CSV open data Advanced notes on methodology (PDF): [http://data.europa.eu/eu
 ```01_read_opendata.ipynb```  
 Reads the 'CFC' and 'CAN' raw OD in ```opendata``` directory, filters them by the countries and contract authority code (defined in the ```config.yml```) and merges them into a single CSV file in the directory defined in ```DATA_DIR```. Create the file defined in ```TED_URLS_FILE``` with a list of URLs from which to download the texts of each CFC.      
 ```02_log_creation.ipynb```  
-Join 'CFC' and 'CAN' files and transforms data into an event log. Save the event log generated in ```data_log```.  The ```ID_NOTICE_CN``` will represent the ```Case ID``` of the event log.  
+Join 'CFC' and 'CAN' files and transforms data into an event log. Save the event log generated in ```data_log```.  The ```ID_NOTICE_CN``` will represent the ```Case ID``` of the event log. It also creates the list of URLs to files containing the full texts of the tenders.  
 
 ## > Script Dependencies
 See ```requirements.txt``` for the required libraries (```pip install -r requirements.txt```).  
