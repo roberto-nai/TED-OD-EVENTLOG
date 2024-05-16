@@ -17,8 +17,6 @@ COUNTRY_CODES_VALUES: # List of country codes (filter)
 CA_CODES_FEATURE: CAE_TYPE # # Contract Authority Code feature name (filter)
 CA_CODES_VALUES: # List of Contract Authority codes (filter)
   - '3'
-LOG_DIR: data_log
-LOG_FILE: TED_log_2016-2022.csv
 TED_LOG_EVENTS: # Features containing events
   - ID_NOTICE_CN
   - DT_DISPATCH
@@ -34,3 +32,6 @@ TED_LOG_ATTRIBUTES: # Features containing trace attributes
   - TAL_LOCATION_NUTS
   - CPV
   - ISO_COUNTRY_CODE
+LOG_DIR: data_log
+LOG_FILE: TED_log_2016-2022.csv # final event log output
+
