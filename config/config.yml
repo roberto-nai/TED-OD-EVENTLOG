@@ -33,5 +33,5 @@ TED_LOG_ATTRIBUTES: # Features containing trace attributes
   - CPV
   - ISO_COUNTRY_CODE
 LOG_DIR: data_log
-LOG_FILE: TED_log_2016-2022.csv # final event log output
+LOG_FILE: TED_log_2016-2022.csv # final event log in output
 
