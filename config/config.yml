@@ -1,8 +1,8 @@
 # config.yml
 
 OD_DIR: opendata # directory with raw open data
-OD_FILE_TYPE: csv 
 DATA_DIR: data # directory with data (previously parsed by opendata)
+OD_FILE_TYPE: csv 
 TED_CFC_FILE: TED_CFC_2016-2022.csv # CFC file merged 
 TED_CFC_SCHEMA_FILE: TED_CFC_schema.csv # CFC file schema (derived from data)
 TED_CAN_FILE: TED_CAN_2016-2022.csv # CAN file merged 
@@ -32,6 +32,7 @@ TED_LOG_ATTRIBUTES: # Features containing trace attributes
   - TAL_LOCATION_NUTS
   - CPV
   - ISO_COUNTRY_CODE
-LOG_DIR: data_log
+LOG_DIR: data_log # directory with event log
 LOG_FILE: TED_log_2016-2022.csv # final event log in output
+GUUE_DIR: guue
 

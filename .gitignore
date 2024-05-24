@@ -168,9 +168,10 @@ _todo/
 data/*
 data_log/*
 opendata/*
+guue/*
 
 # But do not ignore the directory itself
 !data/.gitkeep
 !data_log/.gitkeep
 !opendata/.gitkeep
-
+!guue/.gitkeep
