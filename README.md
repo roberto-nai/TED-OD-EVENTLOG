@@ -40,6 +40,9 @@ Contains the event log created starting from the files in ```data```.
 ```opendata```    
 Contains raw OD downloaded from the TED web site. 
 
+## Other projects
+This project is also related to: [https://github.com/roberto-nai/TED-OD-LLM](https://github.com/roberto-nai/TED-OD-LLM)  
+
 ## Share
 If you use it, please cite:    
 ```
