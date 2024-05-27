@@ -37,6 +37,8 @@ Directory with the configuration file in YAML format (```config.yml```) and scri
 Contains filtered data and schema from raw OD. Files are saved by entering 'CFC' or 'CAN' to distinguish their type.  
 ```data_log```  
 Contains the event log created starting from the files in ```data```.   
+```guue```  
+Directory of TED texts in PDF format, downloaded by following the URLs in the file ```TED_URLS_FILE```.  
 ```opendata```    
 Contains raw OD downloaded from the TED web site. 
 
