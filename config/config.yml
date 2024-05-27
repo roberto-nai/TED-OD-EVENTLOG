@@ -2,6 +2,7 @@
 
 OD_DIR: opendata # directory with raw open data
 DATA_DIR: data # directory with data (previously parsed by opendata)
+GUUE_DIR: guue # directory with PDFs downloaded from TED_URLS_FILE
 OD_FILE_TYPE: csv 
 TED_CFC_FILE: TED_CFC_YS-YE.csv # CFC file merged (YS = Yeast Start, YE = Year End -> see TED_CONFIG_FILE)
 TED_CFC_SCHEMA_FILE: TED_CFC_schema.csv # CFC file schema (derived from data)
@@ -27,7 +28,6 @@ TED_LOG_ATTRIBUTES: # Features containing trace attributes
   - ISO_COUNTRY_CODE
 LOG_DIR: data_log # directory with event log
 LOG_FILE: TED_log_YS-YE.csv # final event log in output (YS = Yeast Start, YE = Year End -> see TED_CONFIG_FILE)
-GUUE_DIR: guue
-TED_CONFIG_FILE: ted_config.json # Filter configuration JSON feature: [desired values].
+TED_CONFIG_FILE: ted_config.json # Filter configuration JSON -> feature: [desired values]
 STATS_DIR: stats
 CPV_DIVISION: 90 # The CPV division is the first two digits of the CPV code
