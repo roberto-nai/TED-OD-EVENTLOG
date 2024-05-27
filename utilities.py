@@ -1,6 +1,7 @@
 ### IMPORT ###
 from pathlib import Path
 import pandas as pd
+import json
 
 ### FUNCTIONS ###
 
@@ -93,3 +94,100 @@ def data_schema(df: pd.DataFrame) ->  pd.DataFrame:
 
     return col_names_and_types
 
+def json_data_to_list_dict(json_file:str) -> list:
+    """
+    Extracts all keys and their associated values from a JSON file.
+
+    Args:
+        json_file (str): The path to the JSON file.
+
+    Returns:
+        list: A list of dictionaries, each containing a key and its associated values, or None if the file does not exist or cannot be decoded.
+    """
+    file_path = Path(json_file)
+    
+    if not file_path.exists():
+        print(f"The file '{json_file}' does not exist.")
+        return None
+    
+    try:
+        with file_path.open('r') as f:
+            data = json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"Error decoding JSON from the file '{json_file}': {e}")
+        return None
+    
+    keys_and_values = [{key: values} for key, values in data.items()]
+    
+    return keys_and_values
+
+def df_filter(df: pd.DataFrame, filter_conditions:list) -> pd.DataFrame:
+    """
+    Filters a DataFrame based on the conditions specified in filter_conditions.
+
+    Parameters:
+        df (pd.DataFrame): The DataFrame to be filtered.
+        filter_conditions (list): A list of dictionaries containing column names as keys and lists of allowed values as values.
+
+    Returns:
+        pd.DataFrame: The filtered DataFrame.
+    """
+    for condition in filter_conditions:
+        print("Filtering for:", condition, end="")
+        for column, values in condition.items():
+            df = df[df[column].isin(values)]
+        print(" [OK]")
+    return df
+
+def df_uniques(df: pd.DataFrame, filter_conditions:list) -> None:
+    """
+    Displays unique/distinct values of a list of columns.
+
+    arameters:
+        df (pd.DataFrame): The DataFrame to be checked.
+        filter_conditions (list): A list of dictionaries containing column names as keys and lists of allowed values as values.
+
+    Returns:
+        None.
+    """
+    for condition in filter_conditions:
+        for column in condition.keys():
+            unique_values = df[column].unique().tolist()
+            print(f"Unique values for column '{column}': {unique_values}")
+
+
+def df_stats_by_year(df: pd.DataFrame, list_stats_floats: list, list_stats_int: list) -> pd.DataFrame:
+    """
+    Calculate annual statistics for specified columns in a DataFrame.
+    
+    Parameters:
+    df (pd.DataFrame): The input DataFrame containing data.
+    list_stats_floats (list): List of column names for which to calculate min, mean, and max values.
+    list_stats_int (list): List of column names for which to count distinct values.
+    
+    Returns:
+    pd.DataFrame: A DataFrame containing the annual statistics for the specified columns.
+    """
+    # Group by year
+    grouped = df.groupby('YEAR')
+    
+    # List to store results
+    stats = []
+    
+    for year, group in grouped:
+        # Calculate statistics for float columns
+        stats_floats = group[list_stats_floats].agg(['min', 'mean', 'max']).reset_index()
+        stats_floats.columns = ['YEAR'] + ['{}_{}'.format(col[0], col[1]) for col in stats_floats.columns[1:]]
+        stats_floats = stats_floats.melt(id_vars='YEAR', var_name='METRIC', value_name='VALUE')
+        
+        # Calculate distinct counts for int columns
+        stats_int = group[list_stats_int].nunique().reset_index()
+        stats_int = stats_int.melt(id_vars='YEAR', var_name='COLUMN', value_name='VALUE')
+        stats_int['METRIC'] = 'nunique'
+        
+        # Combine the results
+        stats_combined = pd.concat([stats_floats, stats_int], axis=0)
+        stats.append(stats_combined)
+    
+    # Concatenate all annual DataFrames
+    return pd.concat(stats).reset_index(drop=True)
