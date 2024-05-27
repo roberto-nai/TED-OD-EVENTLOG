@@ -167,11 +167,13 @@ _todo/
 # Ignore every file the directory
 data/*
 data_log/*
-opendata/*
 guue/*
+opendata/*
+stats/*
 
 # But do not ignore the directory itself
 !data/.gitkeep
 !data_log/.gitkeep
-!opendata/.gitkeep
 !guue/.gitkeep
+!opendata/.gitkeep
+!stats/.gitkeep
