@@ -31,8 +31,6 @@ LOG_FILE: TED_log_YS-YE.csv # final event log in output (YS = Yeast Start, YE = 
 TED_CONFIG_FILE: ted_config.json # Filter configuration JSON -> feature: [desired values]
 STATS_DIR: stats
 CPV_DIVISION: 90 # The CPV division is the first two digits of the CPV code (filter for stats)
-TED_LANG_DOWNLOAD: # Language code for downloading PDFs in GUUE_DIR (list)
-  - IT
 TED_CFC_TYPES: # Columns CFC not to be transformed into numbers (dict)
   ID_NOTICE_CN: object
   FUTURE_CAN_ID: object
@@ -45,3 +43,7 @@ TED_CAN_TYPES: # Columns CAN not to be transformed into numbers (dict)
   ID_LOT_AWARDED: object
   CPV: object
   CAE_TYPE: object
+TED_LANG_DOWNLOAD: # Language code for downloading PDFs in GUUE_DIR (list)
+  - IT
+TED_CPV_DOWNLOAD:
+  - 90
