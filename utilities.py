@@ -143,7 +143,7 @@ def df_uniques(df: pd.DataFrame, filter_conditions:list) -> None:
     """
     Displays unique/distinct values of a list of columns.
 
-    arameters:
+    Parameters:
         df (pd.DataFrame): The DataFrame to be checked.
         filter_conditions (list): A list of dictionaries containing column names as keys and lists of allowed values as values.
 
@@ -156,38 +156,26 @@ def df_uniques(df: pd.DataFrame, filter_conditions:list) -> None:
             print(f"Unique values for column '{column}': {unique_values}")
 
 
-def df_stats_by_year(df: pd.DataFrame, list_stats_floats: list, list_stats_int: list) -> pd.DataFrame:
+def dic_get_years(list_filters:list, key_dic:str):
     """
-    Calculate annual statistics for specified columns in a DataFrame.
-    
+    Given a list of dictionaries, returns the minimum and maximum value of the dictionary with key YEAR
+
     Parameters:
-    df (pd.DataFrame): The input DataFrame containing data.
-    list_stats_floats (list): List of column names for which to calculate min, mean, and max values.
-    list_stats_int (list): List of column names for which to count distinct values.
-    
+        list_filters (list): List of dictionaries.
+        key_dic (str): Key to be searched.
+        
     Returns:
-    pd.DataFrame: A DataFrame containing the annual statistics for the specified columns.
+        int,int: Minimum and maximum value of the key.
     """
-    # Group by year
-    grouped = df.groupby('YEAR')
-    
-    # List to store results
-    stats = []
-    
-    for year, group in grouped:
-        # Calculate statistics for float columns
-        stats_floats = group[list_stats_floats].agg(['min', 'mean', 'max']).reset_index()
-        stats_floats.columns = ['YEAR'] + ['{}_{}'.format(col[0], col[1]) for col in stats_floats.columns[1:]]
-        stats_floats = stats_floats.melt(id_vars='YEAR', var_name='METRIC', value_name='VALUE')
-        
-        # Calculate distinct counts for int columns
-        stats_int = group[list_stats_int].nunique().reset_index()
-        stats_int = stats_int.melt(id_vars='YEAR', var_name='COLUMN', value_name='VALUE')
-        stats_int['METRIC'] = 'nunique'
-        
-        # Combine the results
-        stats_combined = pd.concat([stats_floats, stats_int], axis=0)
-        stats.append(stats_combined)
-    
-    # Concatenate all annual DataFrames
-    return pd.concat(stats).reset_index(drop=True)
+    year_dict = next((item for item in list_filters if key_dic in item), None)
+    # Extract the minimum and maximum value if the dictionary is found
+    if year_dict:
+        year_list = year_dict[key_dic]
+        min_year = min(year_list)
+        max_year = max(year_list)
+        print("Minimum value for YEAR:", min_year) 
+        print("Maximum value for YEAR:", max_year)
+        return min_year, max_year
+    else:
+        print(f"Dictionary with key '{key_dic}' not found.")
+        return 0, 0

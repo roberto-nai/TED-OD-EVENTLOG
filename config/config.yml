@@ -11,14 +11,14 @@ TED_CAN_SCHEMA_FILE: TED_CAN_schema.csv # CAN file schema (derived from data)
 TED_URLS_FILE: TED_URLs.csv # CFC reference to URL (complete text of CFC)
 TED_JOIN_FILE: TED_CFC_CAN_YS-YE.csv # CFC and CAN file merged (input file for creating the event log)
 COUNTRY_CODES_FEATURE: ISO_COUNTRY_CODE # Country codes feature name (filter)
-TED_LOG_EVENTS: # Features containing events (ID_NOTICE_CN is the case-id, the other columns contain the timestamp so if they are not empty the event has occurred)
+TED_LOG_EVENTS: # Features containing events (ID_NOTICE_CN is the case-id, the other columns contain the timestamp so if they are not empty the event has occurred) (list)
   - ID_NOTICE_CN
   - DT_DISPATCH
   - CONTRACT_START
   - CONTRACT_COMPLETION
   - DT_APPLICATIONS
   - DT_AWARD
-TED_LOG_ATTRIBUTES: # Features containing trace attributes
+TED_LOG_ATTRIBUTES: # Features containing trace attributes (list)
   - TYPE_OF_CONTRACT
   - VALUE_EURO
   - B_ELECTRONIC_AUCTION
@@ -31,3 +31,17 @@ LOG_FILE: TED_log_YS-YE.csv # final event log in output (YS = Yeast Start, YE = 
 TED_CONFIG_FILE: ted_config.json # Filter configuration JSON -> feature: [desired values]
 STATS_DIR: stats
 CPV_DIVISION: 90 # The CPV division is the first two digits of the CPV code
+TED_LANG_DOWNLOAD: # Language code for downloading PDFs in GUUE_DIR (list)
+  - IT
+TED_CFC_TYPES: # Columns CFC not to be transformed into numbers (dict)
+  ID_NOTICE_CN: object
+  FUTURE_CAN_ID: object
+  FUTURE_CAN_ID_ESTIMATED: object
+  CPV: object
+  CAE_TYPE: object
+TED_CAN_TYPES: # Columns CAN not to be transformed into numbers (dict)
+  ID_NOTICE_CAN: object
+  ID_AWARD: object
+  ID_LOT_AWARDED: object
+  CPV: object
+  CAE_TYPE: object

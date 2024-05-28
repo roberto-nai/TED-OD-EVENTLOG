@@ -21,11 +21,13 @@ TED CSV open data Advanced notes on methodology (PDF): [http://data.europa.eu/eu
 
 ## > Script Execution
 ```01_read_opendata.ipynb```  
-Reads the 'CFC' and 'CAN' raw OD in ```OD_DIR``` directory, filters them by the countries and contract authority code (defined in the ```config.yml```) and merges them into a single CSV file in the directory defined in ```DATA_DIR```. Create the file defined in ```TED_URLS_FILE``` with a list of URLs from which to download the texts of each CFC. Create file statistics by country and year. Before executing this script, configure the filters in the JSON defined in ```TED_CONFIG_FILE```.  
-```02_log_creation.ipynb```  
+Reads the 'CFC' and 'CAN' raw OD in ```OD_DIR``` directory, filters them by the countries and contract authority code (defined in the ```config.yml```) and merges them into a single CSV file in the directory defined in ```DATA_DIR```. Create the file defined in ```TED_URLS_FILE``` with a list of URLs from which to download the texts of each CFC.   
+```02_stats_opendata.ipynb```  
+Create file statistics by country and year. Before executing this script, configure the filters in the JSON defined in ```TED_CONFIG_FILE```.  
+```03_log_creation.ipynb```  
 Join 'CFC' and 'CAN' files and transforms data into an event log. Save the event log generated in ```DATA_DIR```.  The ```ID_NOTICE_CN``` will represent the ```Case ID``` of the event log. It also creates the list of URLs to files containing the full texts of the tenders.  
-```03_download_guue.ipynb```  
-Starting from the file defined in ```TED_URLS_FILE```, it downloads the linked PDFs in the 'PDF_NOTICE_URL' column of the CSV and saves them in ```GUUE_DIR```.   
+```04_download_guue.ipynb```  
+Starting from the file defined in ```TED_URLS_FILE```, it downloads the linked PDFs in the 'PDF_NOTICE_URL' column of the CSV and saves them in ```GUUE_DIR```. Set the desired language codes for downloading in ```TED_LANG_DOWNLOAD```.    
 
 ## > Script Dependencies
 See ```requirements.txt``` for the required libraries (```pip install -r requirements.txt```).  
