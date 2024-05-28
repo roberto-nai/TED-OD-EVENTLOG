@@ -21,9 +21,9 @@ TED CSV open data Advanced notes on methodology (PDF): [http://data.europa.eu/eu
 
 ## > Script Execution
 ```01_read_opendata.ipynb```  
-Reads the 'CFC' and 'CAN' raw OD in ```OD_DIR``` directory, filters them by the countries and contract authority code (defined in the ```config.yml```) and merges them into a single CSV file in the directory defined in ```DATA_DIR```. Create the file defined in ```TED_URLS_FILE``` with a list of URLs from which to download the texts of each CFC.   
+Reads the 'CFC' and 'CAN' raw OD in ```OD_DIR``` directory, filters them by the countries and contract authority code (defined in the ```config.yml```) and merges them into a single CSV file in the directory defined in ```DATA_DIR```. Create the file defined in ```TED_URLS_FILE``` with a list of URLs from which to download the texts of each CFC. Before executing this script, configure the filters in the JSON defined in ```TED_CONFIG_FILE```.   
 ```02_stats_opendata.ipynb```  
-Create file statistics by country and year. Before executing this script, configure the filters in the JSON defined in ```TED_CONFIG_FILE```.  
+Create file statistics by country and year.   
 ```03_log_creation.ipynb```  
 Join 'CFC' and 'CAN' files and transforms data into an event log. Save the event log generated in ```DATA_DIR```.  The ```ID_NOTICE_CN``` will represent the ```Case ID``` of the event log. It also creates the list of URLs to files containing the full texts of the tenders.  
 ```04_download_guue.ipynb```  
@@ -42,7 +42,9 @@ Contains the event log created starting from the files in ```data```.
 ```guue```  
 Directory of TED texts in PDF format, downloaded by following the URLs in the file ```TED_URLS_FILE```.  
 ```opendata```    
-Contains raw OD downloaded from the TED web site. 
+Contains raw OD downloaded from the TED web site.   
+```stats```    
+Contains the results obtained by the script on statistics.  
 
 ## Other projects
 This project is also related to: [https://github.com/roberto-nai/TED-OD-LLM](https://github.com/roberto-nai/TED-OD-LLM)  
