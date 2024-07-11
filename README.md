@@ -12,7 +12,7 @@ There are two types of dataset available:
 Sample URL for CFC: [https://data.europa.eu/api/hub/store/data/ted-contract-notices-2020.zip](https://data.europa.eu/api/hub/store/data/ted-contract-notices-2020.zip)  
 Sample URL for CAN: [https://data.europa.eu/api/hub/store/data/ted-contract-award-notices-2020.zip](https://data.europa.eu/api/hub/store/data/ted-contract-award-notices-2020.zip)  
 Change the year in the URL to download the related file and save it in ```OD_DIR``` directory inserting 'CFC' or 'CAN' suffix in the file name.  
-The 2016 - 2022 files are also available in a public Drive here: [https://bit.ly/3UP53pC](https://bit.ly/3UP53pC). Download CSVs in the ```OD_DIR```  directory.  
+The 2016 - 2022 files are also available in a public Drive here: [https://bit.ly/3UP53pC](https://bit.ly/3UP53pC). Download CSVs in the ```OD_DIR``` directory.  
 At least one CFC and one CAN file must be used to generate the event log correctly.  
 
 ## TED Open Data - Documentation
@@ -25,7 +25,7 @@ Reads the 'CFC' and 'CAN' raw OD in ```OD_DIR``` directory, filters them by the 
 ```02_stats_opendata.ipynb```  
 Create file statistics by country and year after filtering raw TED dataset.   
 ```03_log_creation.ipynb```  
-Join 'CFC' and 'CAN' files and transforms data into an event log. Save the event log generated in ```DATA_DIR```.  The ```ID_NOTICE_CN``` will represent the ```Case ID``` of the event log. It also creates the list of URLs to files containing the full texts of the tenders.  
+Join 'CFC' and 'CAN' files and transforms data into an event log. Save the event log generated in ```DATA_DIR```. The ```ID_NOTICE_CN``` will represent the ```Case ID``` of the event log. It also creates the list of URLs to files containing the full texts of the tenders.  
 ```04_download_guue.ipynb```  
 Starting from the file defined in ```TED_URLS_FILE```, it downloads the linked PDFs in the 'PDF_NOTICE_URL' column of the CSV and saves them in ```GUUE_DIR```. Set the desired language codes for downloading in ```TED_LANG_DOWNLOAD```.    
 
