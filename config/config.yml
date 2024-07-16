@@ -43,7 +43,7 @@ TED_CAN_TYPES: # Columns CAN not to be transformed into numbers (dict)
   ID_LOT_AWARDED: object
   CPV: object
   CAE_TYPE: object
-TED_LANG_DOWNLOAD: # Language code for downloading PDFs in GUUE_DIR (list)
-  - IT
+TED_LANG_DOWNLOAD: # Language code for downloading PDFs in GUUE_DIR (list) ['PT' 'DE' 'FR' 'ES' 'IT']
+  - ES 
 TED_CPV_DOWNLOAD:
   - 90
