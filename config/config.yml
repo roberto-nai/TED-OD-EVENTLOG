@@ -26,6 +26,7 @@ TED_LOG_ATTRIBUTES: # Features containing trace attributes (list)
   - TAL_LOCATION_NUTS
   - CPV
   - ISO_COUNTRY_CODE
+  - YEAR
 LOG_DIR: data_log # directory with event log
 LOG_FILE: TED_log_YS-YE.csv # final event log in output (YS = Yeast Start, YE = Year End -> see TED_CONFIG_FILE)
 TED_CONFIG_FILE: ted_config_data.json # Filter configuration JSON -> feature: [desired values]
@@ -43,7 +44,11 @@ TED_CAN_TYPES: # Columns CAN not to be transformed into numbers (dict)
   ID_LOT_AWARDED: object
   CPV: object
   CAE_TYPE: object
-TED_LANG_DOWNLOAD: # Language code for downloading PDFs in GUUE_DIR (list) ['PT' 'DE' 'FR' 'ES' 'IT']
-  - ES 
+TED_LANG_DOWNLOAD: # Language code for downloading PDFs in GUUE_DIR (list) ['DE', 'ES', 'FR', 'IT', 'PT']
+  - IT 
 TED_CPV_DOWNLOAD:
   - 90
+YEAR_START: 2016 # Starting year (included)
+YEAR_END: 2022 # End year (included)
+LOG_DOWNLOAD: ted_log_pdf_download.csv # Timing download
+LOG_DOWNLOAD_HEADER: lang;time_start;time_end;time_delta
