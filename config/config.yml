@@ -45,10 +45,10 @@ TED_CAN_TYPES: # Columns CAN not to be transformed into numbers (dict)
   CPV: object
   CAE_TYPE: object
 TED_LANG_DOWNLOAD: # Language code for downloading PDFs in GUUE_DIR (list) ['DE', 'ES', 'FR', 'IT', 'PT']
-  - IT 
+  - DE 
 TED_CPV_DOWNLOAD:
   - 90
 YEAR_START: 2016 # Starting year (included)
 YEAR_END: 2022 # End year (included)
 LOG_DOWNLOAD: ted_log_pdf_download.csv # Timing download
-LOG_DOWNLOAD_HEADER: lang;time_start;time_end;time_delta
+LOG_DOWNLOAD_HEADER: lang;time_start;time_end;time_delta;num_files
